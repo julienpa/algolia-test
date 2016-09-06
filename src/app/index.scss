@@ -5,7 +5,7 @@
 // bower:scss
 // endbower
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic);
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i';
 
 @font-face {
   font-family: 'Material Icons';
@@ -45,7 +45,7 @@
 }
 
 html {
-  font-family: 'Roboto', serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .text-center {
