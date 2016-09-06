@@ -1,0 +1,34 @@
+md-content {
+  padding-bottom: 20px;
+}
+
+.product-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.product-preview {
+
+  .product-image {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+  }
+}
+
+.search-result {
+
+  md-card-title-text {
+    margin-right: 15px;
+
+    .md-subhead {
+      margin-top: 10px;
+    }
+  }
+
+  .product-image {
+    width: 150px;
+    height: 150px;
+  }
+}

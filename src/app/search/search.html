@@ -1,0 +1,54 @@
+<md-toolbar layout="row" layout-align="space-between center" class="md-padding">
+  <h1 class="md-title">Algolia Test</h1>
+  <span class="md-subhead">by Julien Paroche</span>
+</md-toolbar>
+
+<md-content>
+  <h2 class="md-headline text-center">Search demo for e-commerce website</h2>
+
+  <div class="search-bar md-padding" layout="row" layout-align="center">
+    <md-autocomplete
+        flex="100" flex-gt-xs="70"
+        md-no-cache="true"
+        md-selected-item="ctrl.selectedItem"
+        md-search-text="ctrl.searchText"
+        md-items="product in ctrl.hits"
+        md-item-text="product.name"
+        md-min-length="1"
+        placeholder="Search by name, category, brand...">
+     
+      <md-item-template>
+        <div class="product-preview" layout="row" layout-align="start center">
+          <div class="product-image" ng-style="{'background-image': 'url(' + product.image + ')'}"></div>
+          <span flex md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{ product.name }}</span>
+        </div>
+      </md-item-template>
+      
+      <md-not-found>
+        No product matching "{{ ctrl.searchText }}" were found
+      </md-not-found>
+    </md-autocomplete>
+  </div>
+
+  <div class="search-result md-padding" layout="row" layout-align="center">
+    <md-card ng-if="ctrl.selectedItem" flex="100" flex-gt-xs="70" md-theme="default">
+
+      <md-card-title layout-xs="column">
+        <md-card-title-text flex-xs>
+          <span class="md-headline">{{ ctrl.selectedItem.name }}</span>
+          <span class="md-subhead">{{ ctrl.selectedItem.description }}</span>
+        </md-card-title-text>
+        <md-card-title-media layout-xs="row" layout-align-xs="center">
+          <div class="product-image" ng-style="{'background-image': 'url(' + ctrl.selectedItem.image + ')'}"></div>
+        </md-card-title-media>
+      </md-card-title>
+      
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="ctrl.buy($event, ctrl.selectedItem.image)" class="md-primary md-raised">
+          Buy for only ${{ ctrl.selectedItem.price }}
+        </md-button>
+      </md-card-actions>
+
+    </md-card>
+  </div>
+</md-content>
