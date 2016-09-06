@@ -8,6 +8,7 @@
     "url": "https://github.com/julienpa/algolia-test"
   },
   "scripts": {
+    "postinstall": "bower install",
     "start": "gulp serve",
     "build": "gulp build",
     "test": "gulp test"
