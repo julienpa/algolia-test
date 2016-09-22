@@ -6,6 +6,7 @@ export class SearchController {
     'ngInject';
 
     // make angular services usable in all methods
+    this.$scope = $scope;
     this.$log = $log;
     this.$mdDialog = $mdDialog;
     this.$document = $document;
@@ -27,7 +28,7 @@ export class SearchController {
       .search(this.searchText)
       .then((result) => {
         this.$log.debug(result);
-        this.hits = result.hits;
+        this.$scope.$apply(() => this.hits = result.hits);
       })
       .catch((error) => {
         this.$log.error(error);

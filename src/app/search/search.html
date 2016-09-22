@@ -16,14 +16,14 @@
         md-item-text="product.name"
         md-min-length="1"
         placeholder="Search by name, category, brand...">
-     
+
       <md-item-template>
         <div class="product-preview" layout="row" layout-align="start center">
           <div class="product-image" ng-style="{'background-image': 'url(' + product.image + ')'}"></div>
           <span flex md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{ product.name }}</span>
         </div>
       </md-item-template>
-      
+
       <md-not-found>
         No product matching "{{ ctrl.searchText }}" were found
       </md-not-found>
@@ -42,7 +42,7 @@
           <div class="product-image" ng-style="{'background-image': 'url(' + ctrl.selectedItem.image + ')'}"></div>
         </md-card-title-media>
       </md-card-title>
-      
+
       <md-card-actions layout="row" layout-align="end center">
         <md-button ng-click="ctrl.buy($event, ctrl.selectedItem.image)" class="md-primary md-raised">
           Buy for only ${{ ctrl.selectedItem.price }}
